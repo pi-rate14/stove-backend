@@ -4,6 +4,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	database "github.com/pi-rate14/stove-backend/database"
+	middleware "github.com/pi-rate14/stove-backend/middleware"
+	routes "github.com/pi-rate14/stove-backend/routes"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -22,7 +25,7 @@ func main() {
 	router.Use(middleware.Authenticaction())
 
 	routes.FoodRoutes(router)
-	routes.MeuRoutes(router)
+	routes.MenuRoutes(router)
 	routes.TableRoutes(router)
 	routes.OrderRoutes(router)
 	routes.OrderItemRoutes(router)
